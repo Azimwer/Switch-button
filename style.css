@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+body {
+    background-color: aqua;
+}
+
+
+/* Стиль контеинера */
+.switch {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+    
+}
+
+
+
+/* Скрыть стандартное офрмление checkbox */
+.switch__input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+
+/* Slider */
+.switch__slider {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    border-radius: 34px;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+.switch__slider::before {
+    content: "";
+    position: absolute;
+    cursor: pointer;
+    left: 4px;
+    bottom: 4px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: white;
+    transition: 0.4s;
+}
+
+
+/* Стили при фокусе на элелмент  */
+.switch__input:focus + .switch__slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+
+/* Стили при выборе флага компонента */
+.switch__input:checked + .switch__slider {
+background-color: #2196f3;
+}
+.switch__input:checked + .switch__slider::before {
+    transform: translateX(26px);
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+}
+
+
+
